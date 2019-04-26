@@ -41,7 +41,7 @@ namespace ListofPeople.Models
                 return false;
             }
 
-            _context.Persons.Remove(person);
+            _context.Persons.Remove(person);//bara för spara
             _context.SaveChanges();
 
             return true;

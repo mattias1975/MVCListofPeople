@@ -22,7 +22,7 @@ namespace ListofPeople.Models
             City = city;
         }
 
-        private int Id { get; set; }
+        public int Id { get; set; }
         public  string Name { get; set; }
         public string Phone { get; set; }
         public string City { get; set; }

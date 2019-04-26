@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ListofPeople.Models
+namespace ListofPeople.Models//new
 {
     public class PeopleService : IPeopleservice
     {

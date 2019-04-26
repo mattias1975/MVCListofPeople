@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace ListofPeople.Models
 {
-    public class MockPeopleervice : IPeopleservice
+    public class MockPeopleervice : IPeopleService
     {
         int countid = 0;
         List<Person> People;
 
         public MockPeopleervice()
         {
-            People= new List<Person>();
+            People = new List<Person>();
             this.Create("Mattias", "0735-xxxxxx", "Rävemåla");
 
         }
@@ -22,19 +22,19 @@ namespace ListofPeople.Models
             {
                 return null;
             }
-            Person person = new Person(countId++, name, city, phone);
+            Person person = new Person(countid++, name, city, phone);
             People.Add(person);
             return person;
         }
-      
-    public bool Delete(int id)
+
+        public bool Delete(int id)
         {
-            return People.Remove(People.FirstOrDefault(p=> p.Id == id));
+            return People.Remove(People.FirstOrDefault(p => p.Id == id));
         }
-        
+
         public Person FindById(int id)
         {
-            return People.FirstOrDefault(p => p.id == id);
+            return People.FirstOrDefault(p => p.Id == id);
         }
 
         public Person FindByID(int id)
@@ -46,10 +46,10 @@ namespace ListofPeople.Models
         {
             return People;
         }
-        public bool update(Person person)
+        public bool Update(Person person)
         {
-            Person Orginal = People.FirstOrDefault(p => p.id == person.id);
-            if(Orginal==null)
+            Person Orginal = People.FirstOrDefault(p => p.Id == person.Id);
+            if (Orginal == null)
             {
                 return false;
             }
@@ -57,11 +57,6 @@ namespace ListofPeople.Models
             Orginal.Phone = person.Phone;
             Orginal.City = person.City;
             return true;
-        }
-
-        public bool Update(Person person)
-        {
-            throw new NotImplementedException();
         }
     }
 }

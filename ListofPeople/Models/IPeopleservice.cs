@@ -5,14 +5,12 @@ using System.Threading.Tasks;
 
 namespace ListofPeople.Models
 {
-public interface IPeopleservice
+    public interface IPeopleService
     {
-        Person Create(String name, string phone, string city);
+        Person Create(string name, string phone, string city);
         Person FindByID(int id);
         List<Person> GetPeople();
         bool Update(Person person);
         bool Delete(int id);
-
-
     }
 }

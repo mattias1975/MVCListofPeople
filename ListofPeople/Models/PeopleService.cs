@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListofPeople.Models//new
 {
-    public class PeopleService : IPeopleservice
+    public class PeopleService : IPeopleService
     {
         private PeopleDbContext _context;
         public PeopleService(PeopleDbContext context)
@@ -75,8 +75,4 @@ namespace ListofPeople.Models//new
             return true;
         }
     }
-
-    public interface IPeopleService
-    {
-    }
-    }//
+}

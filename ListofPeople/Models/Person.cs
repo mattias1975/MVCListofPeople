@@ -7,16 +7,18 @@ namespace ListofPeople.Models
 {
     public class Person
     {
-        public Person(object p, string name, string phone, string city)
+     
+        public Person(string name, string phone, string city)
         {
-            Id = Id;
+         
             Name = name;
             Phone = phone;
             City = city;
         }
 
-        public Person(string name, string phone, string city)
+        public Person(int id, string name, string phone, string city)
         {
+            Id = id;
             Name = name;
             Phone = phone;
             City = city;

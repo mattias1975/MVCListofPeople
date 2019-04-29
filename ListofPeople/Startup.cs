@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace ListofPeople
 {
-   
+
     public class Startup
     {
         private readonly IConfiguration Configuration;
@@ -23,14 +23,14 @@ namespace ListofPeople
             Configuration = config;
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PeopleDbContext>(options=>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<PeopleDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IPeopleService, MockPeopleervice>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,11 +40,20 @@ namespace ListofPeople
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseMvcWithDefaultRoute();
+            /* {
+                 routes.MapRoute(
+                     name: "ListofPeople_routes",
+                     template: " Index",
+                     defaults: new { Controller = "Home", action = "Index" });
 
+             routes.MapRoute("default", "{ Controller = Home}/{ Action = index}/{ id ?}");
+             });
+             
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
-            });
+            });*/
         }
     }
 }

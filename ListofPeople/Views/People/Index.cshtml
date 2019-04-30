@@ -1,0 +1,26 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "index";
+}
+<h2>People</h2>
+<form asp-controller="People" asp-action="Create" method="post">
+    Create
+    <input type="text" name="Name" placeholder="Write your name"/>
+    <input type="text" name="Phone" placeholder="Write phonenumber"/>
+    <input type="text" name="City" placeholder="Write City"/>
+    <button>Submit</button>
+</form>//
+<div class="col-10">
+    <div class="row">
+        <div class="col-3">Id</div>
+        <div class="col-3">Name</div>
+        <div class="col-3">Phone</div>
+        <div class="col-3">City</div>
+    </div>
+
+
+        @foreach (var item in Model)
+        {
+            <View name="Name" model="item" />
+        }
+    </div>

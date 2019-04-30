@@ -106,12 +106,12 @@ namespace ListofPeople.Controllers
         {
             if (string.IsNullOrWhiteSpace(filter))
             {
-                return PartialView("_List", _peopleService.GetPeople());
+                return View("Index", _peopleService.GetPeople());
             }
 
             filter = filter.ToLower();
 
-            return PartialView("_List", _peopleService.GetPeople()
+            return View("Index", _peopleService.GetPeople()
                 .Where(p => p.Name.ToLower().Contains(filter) || p.City.ToLower().Contains(filter))
                 .ToList());
         }

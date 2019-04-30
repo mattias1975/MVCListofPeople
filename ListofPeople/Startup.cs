@@ -40,20 +40,12 @@ namespace ListofPeople
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvcWithDefaultRoute();
-            /* {
-                 routes.MapRoute(
-                     name: "ListofPeople_routes",
-                     template: " Index",
-                     defaults: new { Controller = "Home", action = "Index" });
-
-             routes.MapRoute("default", "{ Controller = Home}/{ Action = index}/{ id ?}");
-             });
-             
-            app.Run(async (context) =>
+            app.UseMvc(routes =>
             {
-                await context.Response.WriteAsync("Hello World!");
-            });*/
+                routes.MapRoute("default", "{controller=People}/{action=Filter}/{filter?}");
+            });
+
         }
     }
 }
+

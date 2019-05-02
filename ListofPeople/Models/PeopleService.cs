@@ -27,7 +27,7 @@ namespace ListofPeople.Models//new
             return person;
         }
                //
-        public Person FindByID(int id)
+        public Person FindById(int id)
         {
             throw new NotImplementedException();
         }

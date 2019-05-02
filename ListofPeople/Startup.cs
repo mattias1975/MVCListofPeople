@@ -29,7 +29,7 @@ namespace ListofPeople
             services.AddDbContext<PeopleDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<IPeopleService, MockPeopleervice>();
+            services.AddSingleton<IPeopleService, MockPeopleService>();
             services.AddMvc();
         }
 
@@ -40,6 +40,9 @@ namespace ListofPeople
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseStaticFiles();//behövs för att kunna köra statiska filer som till ex css
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=People}/{action=Filter}/{filter?}");

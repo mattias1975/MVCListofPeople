@@ -12,7 +12,7 @@ namespace ListofPeople.Models
      
         public Person(string name, string phone, string city)
         {
-         
+           
             Name = name;
             Phone = phone;
             City = city;

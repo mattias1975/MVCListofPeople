@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace ListofPeople.Models
 {
-    public class MockPeopleervice : IPeopleService
+    public class MockPeopleService : IPeopleService
     {
         int countid = 0;
         List<Person> People;
 
-        public MockPeopleervice()
+        public MockPeopleService()
         {
             People = new List<Person>();
             this.Create("Mattias", "0735-xxxxxx", "Rävemåla");
@@ -37,10 +37,6 @@ namespace ListofPeople.Models
             return People.FirstOrDefault(p => p.Id == id);
         }
 
-        public Person FindByID(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Person> GetPeople()
         {

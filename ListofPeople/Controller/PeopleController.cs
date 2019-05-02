@@ -19,7 +19,7 @@ namespace ListofPeople.Controllers
 
         public IActionResult Person(int id)
         {
-            Person person = _peopleService.FindByID(id);
+            Person person = _peopleService.FindById(id);
 
             if (person == null)
             {
@@ -31,7 +31,7 @@ namespace ListofPeople.Controllers
 
         public IActionResult Details(int id)
         {
-            Person person = _peopleService.FindByID(id);
+            Person person = _peopleService.FindById(id);
 
             if (person == null)
             {
@@ -44,7 +44,7 @@ namespace ListofPeople.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            Person person = _peopleService.FindByID(id);
+            Person person = _peopleService.FindById(id);
 
             if (person == null)
             {
@@ -68,7 +68,7 @@ namespace ListofPeople.Controllers
             }
             else
             {
-                return PartialView("_Edit", _peopleService.FindByID(person.Id));
+                return View("_Edit", _peopleService.FindById(person.Id));
             }
 
         }
@@ -90,7 +90,7 @@ namespace ListofPeople.Controllers
 
         public IActionResult Delete(int id)
         {
-            Person person = _peopleService.FindByID(id);
+            Person person = _peopleService.FindById(id);
 
             if (person == null)
             {

@@ -1,0 +1,14 @@
+﻿@model Person
+
+
+    <div class="row" id="@("Person" + Model.Id)">
+        <div class="col-1">@Model.Id</div>
+        <div class="col-3">@Model.Name</div>
+        <div class="col-3">@Model.Phone</div>
+        <div class="col-3">@Model.City</div>
+        <div class="col-2">
+            <a id="delete" class="btn btn-danger" asp-controller="People" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+        </div>
+
+    </div>
+

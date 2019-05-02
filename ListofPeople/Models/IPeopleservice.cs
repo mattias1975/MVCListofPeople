@@ -8,7 +8,7 @@ namespace ListofPeople.Models
     public interface IPeopleService
     {
         Person Create(string name, string phone, string city);
-        Person FindByID(int id);
+        Person FindById(int id);
         List<Person> GetPeople();
         bool Update(Person person);
         bool Delete(int id);

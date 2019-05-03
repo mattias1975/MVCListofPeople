@@ -84,7 +84,7 @@ namespace ListofPeople.Controllers
                 return BadRequest(new { msg = "You most input  Value in evry " });
             }
 
-            return PartialView("_Person", person);
+            return RedirectToAction("Filter");
 
         }
 
@@ -99,7 +99,7 @@ namespace ListofPeople.Controllers
 
             _peopleService.Delete(id);
 
-            return Content("");
+            return RedirectToAction("Filter");
         }
 
         public IActionResult Filter(string filter)

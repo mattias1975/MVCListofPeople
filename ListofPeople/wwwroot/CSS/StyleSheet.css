@@ -1,11 +1,12 @@
 ﻿
 body {
-    background-color:#808080;
+    background-color:#808083;
 
-color: #ffd800;
+color: #ffffff;
 }
+
 div{
-    color:white;
+    background-color:blue;
  
 }
 
@@ -14,6 +15,10 @@ h1{
     color:blue;
 }
 h2{
-    color:#ffd800;
+    color:#b6ff00;
     text-align:center;
+}
+h3{
+    color:#ffffff;
+   
 }

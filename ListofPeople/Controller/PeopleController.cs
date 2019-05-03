@@ -68,7 +68,7 @@ namespace ListofPeople.Controllers
             }
             else
             {
-                return View("_Edit", _peopleService.FindById(person.Id));
+                return PartialView("_Edit", _peopleService.FindById(person.Id));
             }
 
         }

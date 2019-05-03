@@ -78,12 +78,19 @@ namespace ListofPeople.Controllers
         {
 
             Person person = _peopleService.Create(name, phone, city);
-
-            if (person == null)
+            if (name == null)
             {
-                return BadRequest(new { msg = "You most input  Value in evry " });
+                return BadRequest(new { msg = "You most write name" });
             }
-
+            if (city == null)
+            {
+                return BadRequest(new { msg = "You most write a City" });
+            }
+            if (phone == null)
+            {
+                return BadRequest(new { msg = "You most write yor phonenumber" });
+            }
+       
             return RedirectToAction("Filter");
 
         }

@@ -77,7 +77,6 @@ namespace ListofPeople.Controllers
         public IActionResult Create(string name, string phone, string city)
         {
 
-            Person person = _peopleService.Create(name, phone, city);
             if (name == null)
             {
                 return BadRequest(new { msg = "You most write name" });
@@ -91,6 +90,7 @@ namespace ListofPeople.Controllers
                 return BadRequest(new { msg = "You most write yor phonenumber" });
             }
        
+            Person person = _peopleService.Create(name, phone, city);
             return RedirectToAction("Filter");
 
         }

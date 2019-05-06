@@ -7,16 +7,19 @@ color: #ffffff;
 
 div{
     background-color:blue;
- 
+ text-align:center;
 }
 
 
-h1{
-    color:blue;
+h1 {
+    color: blue;
+    background-color:antiquewhite
 }
 h2{
     color:#b6ff00;
+
     text-align:center;
+    
 }
 h3{
     color:#ffffff;

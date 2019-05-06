@@ -1,0 +1,14 @@
+﻿@model Person
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" clas="text-info"></div>
+    <div class="form-gruop">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-info"></span>
+        <span asp-validation-for="Phone" class="text-info"></span>
+        <span asp-validation-for="City" class="text-info"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Edit" class="btn btn-Success" />
+    </div>
+</form>

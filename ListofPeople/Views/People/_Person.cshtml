@@ -1,14 +1,16 @@
 ﻿@model Person
 
 
-    <div class="row" id="@("Person" + Model.Id)">
-      
-        <div class="col-1" >@Model.Name</div>
-        <div class="col-3">@Model.Phone</div>
-        <div class="col-3">@Model.City</div>
-        <div class="col-2">
-        <a id="delete" asp-controller="People" asp-action="Delete" asp-route-id="@Model.Id"><button type="button" class="btn btn-danger">Delete</button></a>
-        </div>
+<div class="row" id="@("Person" + Model.Id)">
 
+    <div class="col-4">@Model.Name</div>
+    <div class="col-3">@Model.Phone</div>
+    <div class="col-2">@Model.City</div>
+    <div class="col-3">
+        <a id="delete" class="btn btn-danger" asp-controller="People" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+        <a id="update" class="btn btn-success"asp-controller="People" asp-action="edit" asp-route-id="@Model.Id">Edit</a>
     </div>
+    @*<input type="submit" value="Create" class="btn btn-Success" />*@
+</div>
+  
 

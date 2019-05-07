@@ -6,21 +6,26 @@
 <h2>People</h2>
 <form asp-controller="People" asp-action="Create" method="post">
     <h3>Create</h3><br />
-    <input type="text" name="Name" class="bg-warning text-dark " placeholder="Write your name" required />
-    <input type="text" name="Phone" class="bg-warning text-dark" placeholder="Write phonenumber" required />
-    <input type="text" name="City" class="bg-warning text-dark" placeholder="Write City" required />
-    <button class="btn btn-info">Skicka</button>
-    
+    <input type="text" name="Name" class="bg-white text-dark " placeholder="Write your name" required />
+    <input type="text" name="Phone" class="bg-white text-dark" placeholder="Write phonenumber" required />
+    <input type="text" name="City" class="bg-white text-dark" placeholder="Write City" required />
+    <button class="btn btn-success btn-sm">Skicka</button>
+
 </form>
 
 
 <div class="col-10">
- 
+
 
 
     @foreach (var item in Model)
     {
-       
-       <partial name="_Person" model="item" />
+
+        <partial name="_Person" model="item" />
+
     }
+
+
+
+
 </div>

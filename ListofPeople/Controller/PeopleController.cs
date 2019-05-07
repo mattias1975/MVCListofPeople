@@ -54,9 +54,9 @@ namespace ListofPeople.Controllers
             return PartialView("_Edit", person);
         }
         [HttpPost]
-        public IActionResult Edit(Person person)
+        public IActionResult ConfirmEdit(Person person)
         {
-
+           
             if (person == null)
             {
                 return NotFound();
@@ -70,6 +70,7 @@ namespace ListofPeople.Controllers
             {
                 return PartialView("_Edit", _peopleService.FindById(person.Id));
             }
+        
 
         }
 

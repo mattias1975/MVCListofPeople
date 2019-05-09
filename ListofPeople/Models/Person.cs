@@ -9,6 +9,11 @@ namespace ListofPeople.Models
 {
     public class Person
     {
+
+        public Person()
+        {
+
+        }
      
         public Person(string name, string phone, string city)
         {

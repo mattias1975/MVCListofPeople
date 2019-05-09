@@ -42,6 +42,7 @@ namespace ListofPeople.Controllers
         }
 
         [HttpGet]
+
         public IActionResult Edit(int id)
         {
             Person person = _peopleService.FindById(id);

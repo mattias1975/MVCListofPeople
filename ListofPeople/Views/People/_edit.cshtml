@@ -2,20 +2,22 @@
 
 
 <div class="row" id="@("Person" + Model.Id)">
-  
-        <div class="col-4"><input id="name+@Model.Id" type="text" name="name" value="@Model.Name" /></div>
-        <div class="col-3"><input id="Phone+@Model.Id" type="text" name="phone" value="@Model.Phone" /></div>
-        <div class="col-2"><input id="City+@Model.Id" type="text" name="city" value="@Model.City" /></div>
-        <div class="col-3">
-            
-            <button class="btn btn-danger btn-sm"
-                    onclick="SaveEditItem('@("Person" + Model.Id)','@(Model.Id)','@Url.Action("ConfirmEdit","People")')">
-                Save
-                
-            </button>
-        </div>
 
+    <div class="col-4"><input id="@("name" + Model.Id)" type="text" name="name" value="@Model.Name" /></div>
+    <div class="col-3"><input id="@("phone" + Model.Id)" type="text" name="phone" value="@Model.Phone" /></div>
+    <div class="col-3"><input id="@("city" + Model.Id)" type="text" name="city" value="@Model.City" /></div>
+    <div class="col-2">
+        <button class="btn btn-success btn-sm"
+                onclick="SaveEditItem('@("Person" + Model.Id)','@(Model.Id)','@Url.Action("ConfirmEdit","People")')">
+            Save
+
+        </button>
     </div>
+
+ 
+</div>
+
+
 
 
 

@@ -7,13 +7,14 @@ function EditListItem(html_id, edit_url) {
 }
 
 function SaveEditItem(html_id, person_id, edit_url) {
-    console.log($("name+" + person_id).val());
+    console.log($("#name+" + person_id).val());
     var person = {
         Id: person_id,
-        Name: $("name+" + person_id).val(),
-        Phone: $("phone+" + person_id).val(),
-        City: $("City+" + person_id).val()
+        Name: $('#name' + person_id).val(),
+        Phone: $('#phone' + person_id).val(),
+        City: $('#city' + person_id).val()
     }
+    console.log(name);
     console.log(person);
     $.post(edit_url,
         {
@@ -23,6 +24,16 @@ function SaveEditItem(html_id, person_id, edit_url) {
         $('#' + html_id).replaceWith(data);
 
     });
+
+};
+
+function DeleteItem() {
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#Model.id").empty();
+        });
+    });
+
 };
 
 /*

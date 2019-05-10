@@ -43,10 +43,11 @@ namespace ListofPeople.Controllers
 
         [HttpGet]
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int id,string Name, string Phone, string City)
         {
-            Person person = _peopleService.FindById(id);
 
+            Person person = _peopleService.FindById(id);
+  
             if (person == null)
             {
                 return NotFound();
@@ -65,6 +66,7 @@ namespace ListofPeople.Controllers
             
             if (_peopleService.Update(person))
             {
+
                 return PartialView("_Person", person);
             }
             else
@@ -91,7 +93,7 @@ namespace ListofPeople.Controllers
             {
                 return BadRequest(new { msg = "You most write yor phonenumber" });
             }
-       
+           
             Person person = _peopleService.Create(name, phone, city);
             return RedirectToAction("Filter");
 

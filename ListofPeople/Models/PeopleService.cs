@@ -70,7 +70,7 @@ namespace ListofPeople.Models//new
             original.City = person.City;
             original.Phone = person.Phone;
 
-            _context.SaveChanges();
+            //_context.SaveChanges();
 
             return true;
         }

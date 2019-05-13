@@ -95,7 +95,9 @@ namespace ListofPeople.Controllers
             }
            
             Person person = _peopleService.Create(name, phone, city);
-            return RedirectToAction("Filter");
+
+            return PartialView("_Person",person);
+            //return RedirectToAction("Filter");
 
         }
 

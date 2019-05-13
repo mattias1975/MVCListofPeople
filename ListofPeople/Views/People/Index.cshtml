@@ -9,18 +9,16 @@
 
 
     <h3>Create</h3><br />
-    <input type="text" name="Name" class="bg-white text-dark " placeholder="Write your name" required />
-    <input type="text" name="Phone" class="bg-white text-dark" placeholder="Write phonenumber" required />
-    <input type="text" name="City" class="bg-white text-dark" placeholder="Write City" required />
-    <button class="btn btn-success btn-sm">Skicka</button>
-    </div>
+                   <div class="row">
+                       <div class="col-4" id="Name"><input type="text" name="Name" class="bg-white text-dark " placeholder="Write your name" required /></div>
+                       <div class="col-3" id="Phone"><input type="text" name="Phone" class="bg-white text-dark" placeholder="Write phonenumber" required /></div>
+                       <div class="col-3" id="City"><input type="text" name="City" class="bg-white text-dark" placeholder="Write City" required /></div>
+                       <button class="btn btn-success btn-sm" onclick="Createperson('@Url.Action("Create","People")')">Save</button>
+                       <div class="col-2">></div>
+                   </div>
 
 
-
-<div class="col-10">
-
-
-
+<div id="peoplelist">
     @foreach (var item in Model)
     {
 

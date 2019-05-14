@@ -29,15 +29,15 @@ function SaveEditItem(html_id, person_id, edit_url) {
 };
 function Createperson(create_url) {
     var person = {
-        Name: $('#Name').val(),
-        Phone: $('#Phone').val(),
-        City: $('#City').val()
+        
     }
 
     //ajax post
     $.post(create_url,
         {
-            person: person
+            name: $('#Name').val(),
+            phone: $('#Phone').val(),
+            city: $('#City').val()
         }
         , function (data, status) {
 

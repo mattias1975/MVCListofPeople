@@ -100,8 +100,27 @@ namespace ListofPeople.Controllers
             //return RedirectToAction("Filter");
 
         }
+        [HttpPost]
+        public IActionResult Confirmcreate(Person person)
+        {
 
-        public IActionResult Delete(int id)
+            if (person == null)
+            {
+                return NotFound();
+            }
+
+            if (_peopleService.Update(person))
+            {
+
+                return PartialView("_Person", person);
+            }
+            else
+            {
+                return PartialView("_Person", _peopleService.FindById(person.Id));
+            }
+        }
+
+            public IActionResult Delete(int id)
         {
             Person person = _peopleService.FindById(id);
 

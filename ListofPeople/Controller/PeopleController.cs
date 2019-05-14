@@ -130,8 +130,8 @@ namespace ListofPeople.Controllers
             }
 
             _peopleService.Delete(id);
-
-            return RedirectToAction("Filter");
+            return Content("");
+            //return RedirectToAction("Filter");
         }
 
         public IActionResult Filter(string filter)

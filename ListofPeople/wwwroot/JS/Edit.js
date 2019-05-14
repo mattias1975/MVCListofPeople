@@ -50,28 +50,21 @@ function Createperson(create_url) {
 
 }
 
-function DeleteItem() {
-    $(document).ready(function () {
-        $("button").click(function () {
-            $("#Model.id").empty();
-        });
+function DeleteItem(html_id, edit_url) {
+    $.get(edit_url, function (data, status) {
+        $('#' + html_id).replaceWith(data);
     });
-
-
-
-
-
-
+    
     //console.log(name);
     //console.log(person);
-    $.post(edit_url,
-        {
-            person: person
-        }
-        , function (data, status) {
-            $('#' + html_id).replaceWith(data);
+    //$.post(edit_url,
+    //    {
+    //        person: person
+    //    }
+    //    , function (data, status) {
+    //        $('#' + html_id).replaceWith(data);
 
-        });
+    //    });
 
 };
 

@@ -54,7 +54,7 @@ function DeleteItem(html_id, edit_url) {
     $.get(edit_url, function (data, status) {
         $('#' + html_id).replaceWith(data);
     });
-    
+ 
     //console.log(name);
     //console.log(person);
     //$.post(edit_url,

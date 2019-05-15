@@ -2,11 +2,11 @@
 
 
 <div class="row" id="@("Person" + Model.Id)">
-
+    
     <div class="col-4">@Model.Name</div>
     <div class="col-3">@Model.Phone</div>
     <div class="col-2">@Model.City</div>
-    <div class="col-3">
+    
         <button class="btn btn-success btn-sm"
                 onclick="EditListItem('@("Person" + Model.Id)','@Url.Action("Edit","People",new { id = Model.Id })')">
             Edit
@@ -14,11 +14,12 @@
         <button class="btn btn-danger btn-sm"
                 onclick="DeleteItem('@("Person" + Model.Id)','@Url.Action("Delete","People",new { id = Model.Id })')">
             Delete
-          
+
         </button>
+
+        <br>
     </div>
 
-</div>
 
 
 @*<a id="delete" class="btn btn-danger btn-sm" asp-controller="People" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>*@
